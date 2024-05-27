@@ -17,7 +17,11 @@ public class GiangVien extends Nguoi {
     }
 
     public void setMaGV(String maGV) {
-        this.maGV = maGV;
+        if (maGV.equals(" ")){
+            System.out.println("Mã giáo viên rỗng!");
+        }else {
+            this.maGV = maGV;
+        }
     }
 
     public String getChuyenNganh() {
