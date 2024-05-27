@@ -1,12 +1,14 @@
 package bai4.vidu1;
 
+import java.time.LocalDate;
+
 public class Nguoi {
     private String hoTen;
     private int namSinh;
 
     public Nguoi(String hoTen, int namSinh) {
-        this.hoTen = hoTen;
-        this.namSinh = namSinh;
+        this.setHoTen(hoTen);
+        this.setNamSinh(namSinh);
     }
 
     public String getHoTen() {
@@ -14,7 +16,11 @@ public class Nguoi {
     }
 
     public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+        if (hoTen.equals(" ")){
+            System.out.println("Họ tên sai!");
+        }else {
+            this.hoTen = hoTen;
+        }
     }
 
     public int getNamSinh() {
@@ -23,7 +29,13 @@ public class Nguoi {
 
 
     public void setNamSinh(int namSinh) {
-        this.namSinh = namSinh;
+        LocalDate localDate = LocalDate.now();
+        int year = localDate.getYear();
+        if (namSinh > 1900 && namSinh < year){
+            this.namSinh = namSinh;
+        }else {
+            System.out.println("Năm sinh sai!");
+        }
     }
     @Override
     public String toString() {

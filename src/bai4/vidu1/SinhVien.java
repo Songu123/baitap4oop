@@ -6,8 +6,9 @@ public class SinhVien extends Nguoi{
 
     public SinhVien(String hoTen, int namSinh, String maSV, String nganhHoc) {
         super(hoTen, namSinh);
-        this.maSV = maSV;
-        this.nganhHoc = nganhHoc;
+        this.setMaSV(maSV);
+        this.setNganhHoc(nganhHoc);
+
     }
 
     public String getMaSV() {
@@ -15,7 +16,11 @@ public class SinhVien extends Nguoi{
     }
 
     public void setMaSV(String maSV) {
-        this.maSV = maSV;
+        if (maSV.isEmpty()){
+            System.out.println("Mã rỗng!");
+        }else {
+            this.maSV = maSV;
+        }
     }
 
     public String getNganhHoc() {
